@@ -1,0 +1,9 @@
+{
+  "name": "fetch-api-rest",
+  "version": "1.0.0",
+  "description": "Fetch api wrapper",
+  "main": "index.js",
+  "repository": "git@github.com:maichanchinh/fetch-api.git",
+  "author": "ChinhMC",
+  "license": "Apache License 2.0"
+}
