@@ -26,7 +26,7 @@
     "urijs": "^1.18.10"
   },
   "scripts": {
-    "test": "jest --watch --verbose",
+    "test": "jest --watchAll --verbose",
     "build": "babel src --presets babel-preset-es2015 --out-dir distribution",
     "prepublish": "npm run build"
   },

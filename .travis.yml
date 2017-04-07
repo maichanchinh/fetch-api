@@ -1,8 +1,6 @@
 language: node_js
 node_js:
-- node
 - '7'
-- '5'
 deploy:
   provider: npm
   email: maichanchinhls+fetch-api@gmail.com
