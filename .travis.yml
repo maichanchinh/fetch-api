@@ -1,5 +1,16 @@
 language: node_js
 node_js:
-  - "node"
-  - "7"
-  - "5"
+- node
+- '7'
+- '5'
+deploy:
+  provider: npm
+  email: maichanchinhls+fetch-api@gmail.com
+  api_key:
+    secure: 1MQu+rpQ2ITfF1RbwmmgesuHQY0mO+iR1l1BBU/q2HQVZCW9MHl5yuzLHlp920cS5cRddj7f0bYf6CXJjZy6oeRXKI0dR1Pe3SanC3/b3gXJWiOHrB9bKd59RvPtCw0SD6KdnHM5NX+NU5ZSqSHG7I5TqnD07gZ9Qv6DSWLENfm04tZolMEyemVtTWzEStVCkNpyeVx/fnA5ta03L8WGkDVN60vL0SIAgYcTh7KUC69xGGIfRoYLKRGSPrXD7q+yd5Cf6Pi0pQ8Iy/iwaHG2NR8lmYlPaiKknuJvqgtrP0k5hXII22L01SSyr0dCDLZ4PJEh/YeqxZRZIjylnYWxSAHDavWuKD64H/Vy79BEl9kKUPHkaPwiEm/6LfAk0KnYR6xjcZsa5JlNemO2tgtvwgwxFTZnTYQ8Jqf5iGt950BolK9YyvIqbl36zAobeL1YbcyPkCYLlXcntJiczXaZ9mKa1KgVhLBKz55RErd5rgQWve+VABSop4BGZILKuFxB3+DO73hxhKZy2an+ZPSeYP748gsWEgTDa+OahJJ39375oXZUSamVD3foDmFW16ojjjZHK1rgacyImjRffI4n7Rzp6lKTO5E+Or1QLjDdROEOZrUHZ1+iFeRyHqUXh9OEKIyI8eUPN+LEzPKUWaz0Iv41CpWVgUiKp9OHp6DlIVc=
+  on:
+    tags: true
+    repo: maichanchinh/fetch-api
+env:
+  global:
+    secure: UJFovAUXPE0jb2vsE+s7CeWdDaIBO1u7FqGCn2w/eC8pbrPS54DWW0ajZgqNb+mTmI+IKnzmb1s/v1NwioGl2VCMGb/3r7+CF5V3fVlznSsHTAzmA+ROhXBZ8tZqSVU9K5LrzgyPSfSX58zDdEIs8IqWGzKA0PDKG++sEzheU+OU15yDccuMG7xSwpHgxtNb00hn+35//s4SnS5FBqTM7hw/P5MB4hiBw9P7GCMo4FZQ8w43lijUIk+x9fGarDnS7Cy7bPybOZ6jrtdl0bcF9W2A0oAjqbIJtiFsbvWGePVC5IQa6S2tyg9lBhxpsruIWcCx5W3cyeldc0skenRvaqqZVFnuwlP9VWVtJ+LQIIt3/BNemaWSrEPUkcMlr38JN70fzCBMIwV5Pl5s/ZNKvw3u/S0BRqqsWEmIaLMDjFJ31Lk50skwCDmgmU80ktKEEwyzUgsNdFfywgqBb6XL3d9Su0DCFsT0dejz7IDp7C3Ta1V4V/+uL+uXXFoiv8xAkrYqkW5XlR0x5MSA5tTCQs67+jWEB7zaVzW2j67cD4lkqihq/S1UOjZ+vkw35MkxR8hREUJ5XvFZNrEy6GWnSEgo0cTWmf2LBKa1M9wBGxQLbCIA+TpE6oX8ue46vFuY/tBSTBXtdgXke4DrioU1tn6z3H1Wjsgr3U3p61Pv5pc=
