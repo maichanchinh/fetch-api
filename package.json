@@ -2,8 +2,28 @@
   "name": "fetch-api-rest",
   "version": "1.0.0",
   "description": "Fetch api wrapper",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "git@github.com:maichanchinh/fetch-api.git",
   "author": "ChinhMC",
-  "license": "Apache License 2.0"
+  "license": "Apache-2.0",
+  "keywords": [
+    "Fetch",
+    "react",
+    "REST"
+  ],
+  "bugs": {
+    "url": "https://github.com/pratyushmittal/fetch-on-rest/issues"
+  },
+  "devDependencies": {
+    "jest-cli": "^19.0.2"
+  },
+  "dependencies": {
+    "urljs": "^2.3.1"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "jest": {
+    "rootDir": "src"
+  }
 }
