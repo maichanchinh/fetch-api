@@ -1,5 +1,5 @@
 {
-  "name": "fetch-api-rest",
+  "name": "fetch-api-warpper",
   "version": "1.0.0",
   "description": "Fetch api wrapper",
   "main": "src/index.js",
@@ -12,7 +12,7 @@
     "REST"
   ],
   "bugs": {
-    "url": "https://github.com/pratyushmittal/fetch-on-rest/issues"
+    "url": "https://github.com/maichanchinh/fetch-api/issues"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
