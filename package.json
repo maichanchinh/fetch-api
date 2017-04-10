@@ -2,10 +2,10 @@
   "name": "fetch-api-warpper",
   "version": "1.0.0",
   "description": "Fetch api wrapper",
-  "main": "src/index.js",
+  "main": "src/FetchApi.js",
   "repository": "git@github.com:maichanchinh/fetch-api.git",
   "author": "ChinhMC",
-  "license": "Apache-2.0",
+  "license": "Mit",
   "keywords": [
     "Fetch",
     "react",
