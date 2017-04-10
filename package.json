@@ -1,8 +1,8 @@
 {
   "name": "fetch-api-warpper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Fetch api wrapper",
-  "main": "src/FetchApi.js",
+  "main": "lib/FetchApi.js",
   "repository": "git@github.com:maichanchinh/fetch-api.git",
   "author": "ChinhMC",
   "license": "Mit",
@@ -28,7 +28,7 @@
   "scripts": {
     "test": "jest --verbose",
     "test:watch": "jest  --watchAll  --verbose",
-    "build": "babel src --presets babel-preset-es2015 --out-dir distribution",
+    "build": "babel src --presets babel-preset-es2015 --out-dir lib",
     "prepublish": "npm run build"
   },
   "jest": {
