@@ -5,7 +5,7 @@
   "main": "lib/FetchApi.js",
   "repository": "git@github.com:maichanchinh/fetch-api.git",
   "author": "ChinhMC",
-  "license": "Mit",
+  "license": "MIT",
   "keywords": [
     "Fetch",
     "react",

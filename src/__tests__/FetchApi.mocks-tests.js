@@ -22,7 +22,7 @@ describe('Unit tests of mock components', function() {
     expect(api.getPending().length).toEqual(1);
     console.log(api.getPending().length);
     return api.get('users').then(resp => {
-      expect(resp).toEqual({foo: 'bar'});
+      expect(resp).toEqual({"body": {"foo": "bar"}, "status": 200});
     });
   });
 
@@ -42,7 +42,7 @@ describe('Unit tests of mock components', function() {
   it('should parse json', function() {
     api.setResponse('/users/me?foo=bar', JSON.stringify({foo: 'bar'}));
     return api.get(['users', 'me'], {foo: 'bar'}).then(resp => {
-      expect(resp).toEqual({foo: 'bar'});
+      expect(resp).toEqual({"body": {"foo": "bar"}, "status": 200});
     });
   });
 
@@ -57,17 +57,6 @@ describe('Unit tests of mock components', function() {
     api.setResponse('/foo', 'bar');
     return api.rawGet('foo').then(resp => {
       expect(resp).toBe('bar');
-    });
-  });
-
-  it('should check the headers passed to fetch', function () {
-    api.setResponse('/me', 'bar');
-    return api.rawGet('me').then(resp => {
-      expect(resp).toBe('bar');
-      // expect(fetch).toBeCalledWith(
-      //   '/me',
-      //   { headers: {}, method: 'get' }
-      // );
     });
   });
 

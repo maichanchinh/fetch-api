@@ -53,15 +53,22 @@ const FetchApi = (base, addOptions, useTrailingSlashes) => {
   }
 
   const _parseJson = (response) => {
+    let resp = {
+      status: response.status,
+      body: response.text()
+    }
     if(response.status == 204)
       return;
     return response.json().then((json) => {
       if (response.status >= 200 && response.status < 300) {
-        return json;
+        resp['body'] = json
+        return resp;
       } else {
         var error = new Error(response.statusText);
-        error.json = json;
-        throw error;
+        // error.json = json;
+        // throw error;
+        resp['body'] = json;
+        return resp;
       }
     });
   }
