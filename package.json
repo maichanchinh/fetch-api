@@ -1,6 +1,6 @@
 {
   "name": "fetch-api-warpper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Fetch api wrapper",
   "main": "lib/FetchApi.js",
   "repository": "git@github.com:maichanchinh/fetch-api.git",
