@@ -1,0 +1,6 @@
+--timeout 10000
+--recursive
+--debug
+--reporter spec
+--bail
+test/**/*.test.js
