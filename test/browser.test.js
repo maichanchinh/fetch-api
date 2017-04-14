@@ -17,7 +17,7 @@ global.assert = chai.assert;
 let window;
 let server;
 global._options = {
-  baseURI: 'http://localhost:8080',
+  baseURI: 'http://localhost:8088',
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ describe('browser', () => {
   });
 
   before(done => {
-    server = app.listen(8080, done);
+    server = app.listen(8088, done);
   });
 
   after(() => {
@@ -93,11 +93,11 @@ describe('browser', () => {
 
   let methodTest = [
      'get',
-    'head',
+    // 'head',
     'post',
     'put',
-    'del',
-    'options',
+    // 'del',
+    // 'options',
     'patch'
   ];
 
@@ -109,7 +109,7 @@ describe('browser', () => {
       try {
         const res = await api[method]('/', {});
         expect(res).to.be.an('object');
-        // expect(res.body).to.be.an('object');
+        expect(res.body).to.be.an('object');
       } catch (err) {
         throw err;
       }

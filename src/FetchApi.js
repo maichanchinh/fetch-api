@@ -7,6 +7,7 @@
 import _ from 'lodash';
 import { Buffer } from 'buffer';
 import qs from 'qs';
+import caseless from 'caseless';
 const fetch = typeof window === 'object'
   ? window.fetch
   : global.fetch;
@@ -103,6 +104,7 @@ export default class FetchApi{
     this.headers = {
       ...opts.headers
     };
+    
     this.arrayFormat = opts.arrayFormat || 'indices';
     if (opts.auth)
       this.auth(opts.auth);
@@ -130,13 +132,15 @@ export default class FetchApi{
         method: method === 'del'? "DELETE": _.toUpper(method)
       };
 
+      const c = caseless(opts.headers);
+
       if (_.isUndefined(opts.body)) {
         if (opts.method === 'POST') { opts.body = ''; }
       } else if (_.isObject(opts.body) || opts.body instanceof Array) {
         if (opts.method === 'GET') {
           path += `?${qs.stringify(opts.body, { arrayFormat: this.arrayFormat })}`;
           delete opts.body;
-        } else if (_.get(this.headers,'Content-Type') === 'application/json') {
+        } else if (c.get('Content-Type') === 'application/json') {
           try {
             opts.body = JSON.stringify(opts.body);
           } catch (err) {
@@ -149,10 +153,12 @@ export default class FetchApi{
         try {
           const originalRes = await fetch(this.opts.baseURI + path, opts);
           const res = createResponse(originalRes);
-          const contentType = res.headers['Content-Type'];
-         
-          if (!res.ok) {
+          let contentType = res.headers['Content-Type'];
+          if(_.isUndefined(contentType)){
+            contentType = res.headers['content-type'];
+          }
 
+          if (!res.ok) {
             res.err = new Error(res.statusText);
 
             // check if the response was JSON, and if so, better the error
@@ -188,7 +194,7 @@ export default class FetchApi{
           }
           // determine whether we're returning text or json for body
           if (contentType && contentType.includes('application/json')) {
-            res.debug.contentType = contentType;
+                  res['debug'] = JSON.stringify(res.body);
             try {
               res.body = await res.text();
               res.body = JSON.parse(res.body);

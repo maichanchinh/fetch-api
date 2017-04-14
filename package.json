@@ -49,12 +49,13 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.23.0",
     "buffer": "^5.0.6",
+    "caseless": "^0.12.0",
     "lodash": "^4.17.4",
     "qs": "^6.4.0",
     "urijs": "^1.18.10"
   },
   "scripts": {
-    "test": "npm run lint && npm run browserify && NODE_ENV=test _mocha --require babel-core/register",
+    "test": "npm run browserify && NODE_ENV=test _mocha --require babel-core/register  --presets babel-preset-es2015 --presets babel-preset-stage-0",
     "test:debug": "npm run lint && npm run browserify && NODE_ENV=test _mocha --require babel-core/register --debug-brk",
     "build": "babel src --presets babel-preset-es2015 --presets babel-preset-stage-0 --out-dir lib",
     "prepublish": "npm run build",
