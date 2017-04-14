@@ -57,7 +57,7 @@
   "scripts": {
     "test": "npm run browserify && NODE_ENV=test _mocha --require babel-core/register  --presets babel-preset-es2015 --presets babel-preset-stage-0",
     "test:debug": "npm run lint && npm run browserify && NODE_ENV=test _mocha --require babel-core/register --debug-brk",
-    "build": "babel src --presets babel-preset-es2015 --presets babel-preset-stage-0 --out-dir lib",
+    "build": "node_modules/.bin/babel src --presets babel-preset-es2015 --presets babel-preset-stage-0 --out-dir lib",
     "prepublish": "npm run build",
     "lint": "node_modules/.bin/eslint src",
     "browserify": "node_modules/.bin/browserify -t babelify test/browser.js > test/browser.bundled.js"
